@@ -20,6 +20,7 @@
     "postcss": "^8.4.24"
   },
   "dependencies": {
-    "ioredis": "^5.3.2"
+    "ioredis": "^5.3.2",
+    "vue": "^3.3.4"
   }
 }
