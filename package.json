@@ -12,16 +12,15 @@
     "@antfu/eslint-config": "^0.39.5",
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.7.2",
-    "@types/node": "^18",
+    "tailwindcss": "^3.3.2",
     "autoprefixer": "^10.4.14",
     "daisyui": "^3.1.0",
     "eslint": "^8.42.0",
-    "nuxt": "^3.5.2",
     "postcss": "^8.4.24"
   },
   "dependencies": {
-    "ioredis": "^5.3.2",
-    "tailwindcss": "^3.3.2",
-    "vue": "^3.3.4"
+    "@types/node": "^18",
+    "nuxt": "^3.5.2",
+    "ioredis": "^5.3.2"
   }
 }

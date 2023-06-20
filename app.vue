@@ -1,7 +1,7 @@
-<template>
-  <NuxtPage />
-</template>
-
 <script lang="ts">
 
 </script>
+
+<template>
+  <NuxtPage />
+</template>

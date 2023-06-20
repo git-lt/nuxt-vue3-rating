@@ -8,7 +8,7 @@ module.exports = {
     './pages/**/*.vue',
     './plugins/**/*.{js,ts}',
     './nuxt.config.{js,ts}',
-    './app.vue'
+    './app.vue',
   ],
   theme: {
     extend: {},
@@ -17,7 +17,6 @@ module.exports = {
     daisyui,
   ],
   daisyui: {
-    theme: ['light', 'dark']
-  }
+    theme: ['light', 'dark'],
+  },
 }
-
