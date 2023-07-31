@@ -11,7 +11,20 @@ module.exports = {
     './app.vue',
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        fadeInRight: 'fadeInRight .4s ease-out forwards',
+      },
+      keyframes: {
+        fadeInRight: {
+          to: {
+            'opacity': 1,
+            'pointer-events': 'unset',
+            'transform': 'translateX(0)',
+          },
+        },
+      },
+    },
   },
   plugins: [
     daisyui,

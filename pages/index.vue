@@ -1,47 +1,52 @@
 <script lang="ts" setup>
-const emojis = ['🤔️', '👎', '🤐️', '😄', '😍', '🎉'];
-const rateWrapperRef = ref<HTMLDivElement>();
+const emojis = ['🤔️', '👎', '🤐️', '😄', '😍', '🎉']
+const rateWrapperRef = ref<HTMLDivElement>()
 const rate = ref<number>(0)
 
 function onChange() {
-  if(!rateWrapperRef.value) return;
+  if (!rateWrapperRef.value)
+    return
   console.log(rate.value)
 
   rateWrapperRef.value.scrollTo({
     top: rate.value * rateWrapperRef.value.clientHeight,
-    behavior: 'smooth'
+    behavior: 'smooth',
   })
 }
 </script>
 
 <template>
- <div id="app" class="w-80 grid grid-cols-[7rem_1fr] grid-rows-3">
-  <div class="row-span-2 p-1 overflow-hidden h-20" ref="rateWrapperRef">
-    <div 
-      class="w-18 h-18 flex justify-center items-center snap-y mb-2 text-7xl"
-      v-for="item in emojis" 
-      :key="item"
-     >
-     {{ item }}
-    </div>
-  </div>
-  <div class="text-center leading-8">Youre vote: ❓</div>
-  <div>
-    <div class="rating rating-lg flex-row-reverse" @change="onChange">
-      <input 
-        type="radio" 
-        name="rating-2" 
-        class="mask mask-star-2" 
-        v-for="item in 5" 
+  <div id="app" class="w-80 grid grid-cols-[7rem_1fr] grid-rows-3">
+    <div ref="rateWrapperRef" class="row-span-2 p-1 overflow-hidden h-20">
+      <div
+        v-for="item in emojis"
         :key="item"
-        :class="{active: 6-item === rate}"
-        :value="6 - item"
-        v-model="rate"
-      />
+        class="w-18 h-18 flex justify-center items-center snap-y mb-2 text-7xl"
+      >
+        {{ item }}
+      </div>
+    </div>
+    <div class="text-center leading-8">
+      Youre vote: ❓
+    </div>
+    <div>
+      <div class="rating rating-lg flex-row-reverse" @change="onChange">
+        <input
+          v-for="item in 5"
+          :key="item"
+          v-model="rate"
+          type="radio"
+          name="rating-2"
+          class="mask mask-star-2"
+          :class="{ active: 6 - item === rate }"
+          :value="6 - item"
+        >
+      </div>
+    </div>
+    <div class="col-span-2 text-center pt self-center">
+      Ranks
     </div>
   </div>
-  <div class="col-span-2 text-center pt self-center">Ranks</div>
- </div>
 </template>
 
 <style>
