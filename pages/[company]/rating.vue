@@ -26,7 +26,7 @@ async function onChange(evemt: Event | boolean): Promise<void> {
     return
 
   rateWrapperRef.value.scrollTo({
-    top: rate.value * rateWrapperRef.value.clientHeight,
+    top: rate.value * rateWrapperRef.value.clientHeight + 10,
     behavior: 'smooth',
   })
   // 如果是初始化，只进行滚动，不请求接口
@@ -93,7 +93,7 @@ onMounted(() => {
       <div
         v-for="item in emojis"
         :key="item"
-        class="w-18 h-18 flex justify-center items-center snap-y mb-2 text-7xl"
+        class="w-18 h-18 flex justify-center items-center snap-y mb-3 text-7xl"
       >
         {{ item }}
       </div>
